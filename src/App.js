@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form>
+        <label>Equation</label>
+        <input 
+          type='text'
+          className="equation"
+          name='equation'
+          placeholder='Enter an Equation'
+          // value={equation}
+          // onChange={handleChange}
+          alt="Result"
+        />
+        <label>Result</label>
+        <input 
+          type='text'
+          className="result"
+          name='result'
+          placeholder='Result Output'
+          // value={result}
+          // onChange={handleChange}
+          alt="Result"
+        />
+        <input 
+          type='submit'
+          className='submit-btn'
+          alt='submit'
+        />
+      </form>
     </div>
   );
 }
