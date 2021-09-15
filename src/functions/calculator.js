@@ -2,26 +2,12 @@ import Calculate from "./calculate"
 
 const Calculator = (str) => {
   let output = null;
-  // let input = str.replace(/[\d()*/+-.]/g, '');
+
+  // remove all the whitespace
   let input = str.replace(/\s/g, '')
 
-  const operators = {
-    add: '+',
-    sub: '-',
-    mul: '*',
-    div: '/'
-  };
-
-  const order = [
-    [
-      operators.mul,
-      operators.div
-    ],
-    [
-      operators.add,
-      operators.sub
-    ]
-  ];
+  // order of operation
+  const ooo = [ [ '*', '/' ], [ '+', '-' ] ];
 
   const opStr = '*/+-';
 
@@ -33,7 +19,7 @@ const Calculator = (str) => {
   } else {
     for (let i = 1; i < input.length - 1; i++) {
       if ((opStr.includes(input[i-1]) && opStr.includes(input[i]) && opStr.includes(input[i+1])) 
-      || (opStr.includes(inputs[i-1]) && '*/+'.includes(input[i]))) {
+      || (opStr.includes(input[i-1]) && '*/+'.includes(input[i]))) {
         return 'Syntax Error'
       }
     }
@@ -54,7 +40,21 @@ const Calculator = (str) => {
   //   }
   // }
 
+  for (let i = 0; i < ooo.length; i++) {
 
+    // Regular Expression to look for operators between floating numbers or integers
+    let regExp = new RegExp('(\\-?\\d+\\.?\\d*)([\\' + ooo[i].join('\\') + '])(\\-?\\d+\\.?\\d*)')
+    regExp.lastIndex = 0 // resetting reExp starting position as precaution
+
+    while (regExp.test(input)) {
+      output = Calculate(RegExp.$1, RegExp.$2, RegExp.$3);
+      if (isNaN(output) || !isFinite(output)) {
+        return "Error NaN or Not Finite"
+      }
+
+      input = input.replace(regExp, output)
+    }
+  }
 
   return output
 }

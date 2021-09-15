@@ -1,19 +1,32 @@
-import './App.css';
+import './App.scss';
 import React, {useState} from "react";
 import Calculator from './functions/calculator';
 
 function App() {
+
+  const [equation, setEquation] = useState('')
+  const [result, setResult] = useState(null)
+
+  const handleChange = (event) => {
+    setEquation(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setResult(Calculator(equation))
+  }
+
   return (
     <div className="App">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Equation</label>
         <input 
           type='text'
           className="equation"
           name='equation'
           placeholder='Enter an Equation'
-          // value={equation}
-          // onChange={handleChange}
+          value={equation}
+          onChange={handleChange}
           alt="Result"
         />
         <label>Result</label>
@@ -22,8 +35,7 @@ function App() {
           className="result"
           name='result'
           placeholder='Result Output'
-          // value={result}
-          // onChange={handleChange}
+          value={result}
           alt="Result"
         />
         <input 
