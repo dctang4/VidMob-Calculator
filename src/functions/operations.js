@@ -1,5 +1,5 @@
-const Calculate = (a, op, b) => {
-  // convert string to number
+const Operations = (a, op, b) => {
+  // convert string to number using Unary Operator (+)
   a = +a;
   b = +b;
 
@@ -18,4 +18,4 @@ const Calculate = (a, op, b) => {
   }
 }
 
-export default Calculate
+export default Operations

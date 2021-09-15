@@ -2,37 +2,30 @@
   text-align: center;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+div {
+  h1 {
+    font-size: 40px;
+  }
+  form {
+    display: grid;
+    width: 400px;
+    margin: auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    label {
+      text-align: left;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    input.equation, input.result {
+      height: 20px;
+      font-size: 18px;
+    }
+    input.submit-btn {
+      grid-column: 1 / 3;
+      width: 100px;
+      font-size: 18px;
+      margin: auto;
+    }
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

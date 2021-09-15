@@ -18,8 +18,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Calculator</h1>
       <form onSubmit={handleSubmit}>
-        <label>Equation</label>
+        <label className="equation" >Equation: </label>
         <input 
           type='text'
           className="equation"
@@ -29,7 +30,7 @@ function App() {
           onChange={handleChange}
           alt="Result"
         />
-        <label>Result</label>
+        <label className='result'>Result: </label>
         <input 
           type='text'
           className="result"

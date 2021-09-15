@@ -1,13 +1,9 @@
-import Calculate from "./calculate"
+import Calculation from "./calculation";
 
 const Calculator = (str) => {
-  let output = null;
 
   // remove all the whitespace
   let input = str.replace(/\s/g, '')
-
-  // order of operation
-  const ooo = [ [ '*', '/' ], [ '+', '-' ] ];
 
   const opStr = '*/+-';
 
@@ -25,38 +21,8 @@ const Calculator = (str) => {
     }
   }
 
-  // for (let i = 0; i < input.length; i++) {
-  //   if (input[i] === "(") {
-  //     let count1 = 1;
-  //     let count2 = 0;
-  //     for (let j = i+1; j < input.length; j++) {
-  //       if (input[j] === "(") {
-  //         count1++
-  //       } else if (input[j] === ")") {
-  //         count2++
-          
-  //       }
-  //     }
-  //   }
-  // }
 
-  for (let i = 0; i < ooo.length; i++) {
-
-    // Regular Expression to look for operators between floating numbers or integers
-    let regExp = new RegExp('(\\-?\\d+\\.?\\d*)([\\' + ooo[i].join('\\') + '])(\\-?\\d+\\.?\\d*)')
-    regExp.lastIndex = 0 // resetting reExp starting position as precaution
-
-    while (regExp.test(input)) {
-      output = Calculate(RegExp.$1, RegExp.$2, RegExp.$3);
-      if (isNaN(output) || !isFinite(output)) {
-        return "Error NaN or Not Finite"
-      }
-
-      input = input.replace(regExp, output)
-    }
-  }
-
-  return output
+  return Calculation(input)
 }
 
 export default Calculator
