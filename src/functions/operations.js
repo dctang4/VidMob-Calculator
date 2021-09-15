@@ -18,5 +18,5 @@ const Operations = (a, op, b) => {
   }
 }
 
-export default Operations
-// module.exports = Operations
+// export default Operations
+module.exports = Operations

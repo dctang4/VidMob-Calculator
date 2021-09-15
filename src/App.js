@@ -1,7 +1,7 @@
 import './App.scss';
 import React, {useState} from "react";
-// import Calculator from './functions/calculator';
-const Calculator = require('./functions/calculator')
+import Calculator from './functions/calculator';
+// const Calculator = require('./functions/calculator')
 
 function App() {
 
