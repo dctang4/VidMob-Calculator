@@ -1,4 +1,5 @@
 import Operations from "./operations";
+// const Operations = require('"./operations"')
 
 const Calculation = (input) => {
   let output = null;
@@ -27,3 +28,4 @@ const Calculation = (input) => {
 };
 
 export default Calculation;
+// module.exports = Calculation;
