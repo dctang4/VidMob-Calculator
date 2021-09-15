@@ -1,6 +1,6 @@
-import React from "react";
+import Calculate from "./calculate"
 
-const Calculate = (str) => {
+const Calculator = (str) => {
   let output = null;
   // let input = str.replace(/[\d()*/+-.]/g, '');
   let input = str.replace(/\s/g, '')
@@ -39,9 +39,24 @@ const Calculate = (str) => {
     }
   }
 
+  // for (let i = 0; i < input.length; i++) {
+  //   if (input[i] === "(") {
+  //     let count1 = 1;
+  //     let count2 = 0;
+  //     for (let j = i+1; j < input.length; j++) {
+  //       if (input[j] === "(") {
+  //         count1++
+  //       } else if (input[j] === ")") {
+  //         count2++
+          
+  //       }
+  //     }
+  //   }
+  // }
+
 
 
   return output
 }
 
-export default Calculate
+export default Calculator
