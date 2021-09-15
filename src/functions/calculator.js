@@ -13,7 +13,7 @@ const Calculator = (str) => {
   // check for invalid inputs and syntax errors
   if (input.search(/[^\d()*/+-.]/g) >= 0) {
     return 'Invalid Input';
-  } else if ('*/+'.includes(input[0]) || opStr.includes(input[input.length - 1])) {
+  } else if ('*/+)'.includes(input[0]) || '*/+-('.includes(input[input.length - 1])) {
     return 'Syntax Error';
   } else {
     for (let i = 1; i < input.length - 1; i++) {
