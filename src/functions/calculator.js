@@ -25,15 +25,17 @@ const Calculator = (str) => {
   }
 
   let regExp = new RegExp("(\\D+\\.\\d+)")
-  regExp.lastIndex = 0; // resetting reExp starting position as precaution
+  // regExp.lastIndex = 0; // resetting reExp starting position as precaution
 
   while (regExp.test(input)) {
     let strArr = RegExp.$1.split('.').join('0.')
     input = input.replace(regExp, strArr)
   }
 
-  // run Calculation function and return the result
-  return Calculation(input)
+  // run Calculation function
+  let result = Calculation(input)
+  // If result is not an integer round the round the float to 2 decimal places
+  return !Number.isInteger(result) ? result.toFixed(2) : result 
 }
 
 // export default Calculator
