@@ -6,7 +6,7 @@ import Calculator from './functions/calculator';
 function App() {
 
   const [equation, setEquation] = useState('')
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState()
 
   const handleChange = (event) => {
     setEquation(event.target.value)

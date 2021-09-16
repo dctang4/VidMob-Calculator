@@ -24,7 +24,7 @@ const Calculation = (input) => {
       let newPart = loop(part)
 
       input = input.replace(re, newPart)
-      
+
       return loop(input)
 
     } else {
